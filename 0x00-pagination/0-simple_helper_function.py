@@ -15,6 +15,6 @@ def index_range(page: int, page_size: int) -> Tuple:
     It returns a tuple
     """
 
-    offset = (page - 1) * page_size
-    limit = offset + page_size - 1
+    limit = page * page_size
+    offset = limit - page_size 
     return (offset, limit)
