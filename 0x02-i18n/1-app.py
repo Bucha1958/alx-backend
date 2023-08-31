@@ -6,11 +6,21 @@ My flask app file
 
 from flask import Flask, render_template
 from flask_babel import Babel
-from config import Config
 
 
 app = Flask(__name__)
 babel = Babel(app)
+
+
+class Config:
+    """
+        config class
+    """
+    LANGUAGES = ['en', 'fr']
+    BABEL_DEFAULT_LOCALE = 'en'
+    BABEL_DEFAULT_TIMEZONE = "UTC"
+
+
 app.config.from_object(Config)
 
 
